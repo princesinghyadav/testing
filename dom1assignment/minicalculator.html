@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="eng">
+    <head>
+        <title> mini calculator</title>
+    <style>
+       #first{
+        height: 60px;
+        width: 300px;
+        color: red;
+        }
+        #second{
+            height: 60px;
+            width: 300px;
+            color: red;
+        }
+        .clas{
+            height: 50px;
+            width: 200px;
+        }
+    </style>
+    </head>
+    <body>
+     
+        <h1 style="text-align: center;"> MINI CALCULATOR</h1>
+        <div >
+    <input type="number" placeholder="enter first digit" id="second">
+    <input type="number" placeholder="enter second digit" id="first">
+    </div>
+    <hr>
+    <div>
+    <button  class="clas"   onclick="add()"> ADD </button>
+    <button onclick="subt()"   class="clas"> SUBTRACT </button>
+    <button onclick="mult()"  class="clas"> MULTIPLY </button>
+    <button onclick="divide()"  class="clas"> DIVIDE  </button>
+    </div>
+    </body>
+</html>
+<script>
+let sec= document.getElementById("first");
+let fir= document.getElementById("second");
+function add(){
+    let addition=fir.value + sec.value;
+    alert(addition);
+}
+function subt(){
+    let subtraction=fir.value - sec.value;
+    alert(subtraction);
+}
+function mult(){
+    let MULTIPLY=fir.value*sec.value;
+    alert(MULTIPLY);
+}
+function divide(){
+    let division=fir.value/sec.value;
+    alert(division);
+}
+
+
+
+</script>
