@@ -25,29 +25,49 @@
 	<button onclick="resetForm()">RESET FORM</button>
 	<button onclick="resetDisplay()">RESET DISPLAY</button>
 	<script type="text/javascript">
-        
+        let namee = document.getElementById("dName");
+		let gen = document.getElementById("dGender");
+		let maiil = document.getElementById("dEmail");
+		let mob = document.getElementById("dMobile");
+		let nam = document.getElementById("name")
+		let gend = document.getElementById("gender")
+		let emai =document.getElementById("email")
+		let mobi =document.getElementById("mobile")
 		function showName() {
 			// Show filled name inside h1
+           namee.innerText =  nam.value
+		 // console.log(namee.innerText)
 		}
 
 		function showGender() {
 			// Show the selected gender inside h2
+			gen.innerText = gend.value
 		}
 
 		function showEmail() {
 			// Show the filled email inside h3
+			maiil.innerText = emai.value
 		}
 
 		function showMobile() {
 			// Show the filled mobile inside h4
+			mob.innerText = mobi.value
 		}
 
 		function resetForm() {
 			// Reset all the form elements to default values (blank "")
+			nam.value = " "
+			gend.value=" "
+			emai.value=" "
+			mobi.value= " "
 		}
 
 		function resetDisplay() {
 			// Reset all the headings (h1, h2, h3, h4) to blank values
+			mob.innerText = "  -  "
+			namee.innerText =" -"
+			gen.innerText= " -"
+			maiil.innerText="-"
 		}
 	</script>
 </body>
