@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> calculator grid</title>
+        <style>
+            #parent{
+                box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+                height: 470px;
+                width:28%;
+                margin: auto;
+                margin-top: 59px;
+                
+                
+                
+
+                
+            }
+            #pc{
+                
+                box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+                height: 285px;
+                width: 70%;
+                margin: auto;
+                margin-top: 30px;
+                display: grid;
+                grid-template-columns:  repeat(4,60px) ;
+                grid-template-rows: repeat(4,60px);
+                gap: 12px;
+                
+            }
+            #pc>button{
+                box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+                text-align: center;
+                font-size: large;
+                font-weight: bolder;
+                border-radius: 8px;
+                
+
+            }
+            #pc>button:nth-child(11){
+                background-color: black;
+                color: white;
+                
+            }
+            #pc>button:nth-child(14){
+                background-color: black;
+                color: white;
+            }
+            #pc>button:nth-child(12){
+                background-color: black;
+                color: white;
+            }
+            #pc>button:nth-child(13){
+                background-color: black;
+                color: white;
+            }
+            #pc>button:nth-child(15){
+                background-color: green
+                ;
+                color: white;
+            }
+            #pc>button:nth-child(16){
+                background-color: red;
+                color:white;
+            }
+            #pc2{
+                box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+                width: 70%;
+                height: 60px;
+                margin: auto;
+                margin-top: 50px;
+                border-radius: 8px;
+            }
+
+        </style>
+    </head>
+    <body>
+        <h1 style="text-align: center ; color: green;">MASAI CALCULATOR</h1>
+
+        <div id="parent">
+            <div id="pc2">
+
+            </div>
+        <div id="pc">
+            <button>1</button>
+            <button>2</button>
+            <button>3</button>
+            <button>4</button>
+            <button>5</button>
+            <button>6</button>
+            <button>7</button>
+            <button>8</button>
+            <button>9</button>
+            <button>0</button>
+            <button  id="plus">+</button>
+            <button id="minus">-</button>
+            <button  id="multiply" >*</button>
+            <button  id="divide" >/</button>
+            <button id="equal" onclick="check()">=</button>
+            <button>clear</button>
+            
+            
+        </div>
+        </div>
+    </body>
+    <script>
+        let display=document.getElementById("pc2")
+        let valuu =document.querySelectorAll("#pc>button")
+        let plus=document.getElementById("plus")
+        let minus =document.getElementById("minus")
+        let multiply=document.getElementById("multiply")
+        let equal =document.getElementById("equal")
+        let divide =document.getElementById("divide")
+         function check(){
+             console.log(display,valuu,plus,minus,multiply,equal,divide)
+         }
+        
+        for(i=0;i<valuu.length;i++){
+            let bag=""
+         valuu[i].addEventListener("click" , clicked)
+         function clicked () {
+            bag += valuu[i].textContent
+         display.innerText = bag;
+         //console.log(valuu[i])
+         }
+        }
+       
+    </script>
+</html>
