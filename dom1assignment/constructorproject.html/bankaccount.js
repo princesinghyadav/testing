@@ -1,14 +1,4 @@
-<!DOCTYPE html>
-<html lang="eng" >
-    <head>
-        <title> account management </title>
-
-    </head>
-    <body>
-
-        <h1>constructor function </h1>
-    </body>
-    <script>
+ 
         console.log("constructor function test ");
      function Creteac (ac_no,name,type,balance){
       this.acno=ac_no,
@@ -49,5 +39,4 @@
      let total =[ p1,p2,p3];
      totalbalance(total)
      console.log(p1.totalbalance)
-    </script>
-</html>
+    

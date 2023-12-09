@@ -1,11 +1,4 @@
-<!DOCTYPE html>
-<html>
-     <h1>books </h1>
-     <h1> managemenet</h1> 
-
-
-
-<script>
+ 
 
 
   function author (name ,birthyear,nationality){
@@ -29,5 +22,3 @@
      console.log(b1)
      console.log(b2 )
      console.log(b3)
-</script>
-</html>
