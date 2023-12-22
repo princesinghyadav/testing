@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en ">
+     <head> 
+        <title> SIMULATION GAME</title>
+     </head>
+     <body>
+      
+        <h1>prototype & inheritence </h1>
+     </body>
+     <script> 
+     function vehicle( brand, model, speed,  fuelType){
+    this.brand= brand;
+    this.model=model;
+    this.speed=speed;
+    this.fuelType=fuelType;
+    
+     }
+     vehicle.prototype.accelerate = function(){
+       this.speed +=15 ;
+        console.log("speed:-",this.speed)
+     };
+     vehicle.prototype.brake= function (){
+        this.speed -=10;
+        console.log(this.speed)
+     };
+     vehicle.prototype.refuel = function(){
+        console.log("refueling the vehicle");
+     }
+
+     function car(brand,model,speed,fuelType,no_ofwheels){
+      vehicle.call(this,brand,model,speed,fuelType),
+     this.no_ofwheels=no_ofwheels
+     this.honk= function (){
+        console.log("honking sound");
+     }
+     };
+
+     Object.setPrototypeOf(car.prototype,vehicle.prototype);
+    
+     function airplane (brand,model,speed,fueltype,no_ofengines,has_landinggear,no_ofwheels){
+        vehicle.call(this,brand,model,speed,fueltype)
+        this.no_ofengines=no_ofengines;
+        this.has_landinggear=has_landinggear;
+        this.no_ofwheels=no_ofwheels;
+    
+     };
+    Object.setPrototypeOf(airplane.prototype,vehicle.prototype); 
+      airplane.prototype.takeoff = function (){
+            console.log("This Flight will takeoff injust five minutes ")
+        }
+     let vehicle1  = new car ("bmw",2021,0,"petrol",4);
+     let air1 = new airplane("redmi",2023,35,"petrol",3,"false",7)
+    vehicle1.accelerate();
+    vehicle1.brake();
+ vehicle1.honk()
+
+console.log(air1)
+
+
+
+
+//console.log(vehicle1)
+//    vehicle1.accelerate
+//      console.log(vehicle1.accelerate)
+//    //  console.log(vehicle1.refuel)
+//    //  console.log(vehicle1.brake)
+    
+
+
+    
+//      //console.log(air1);
+//      let vehicle2 = new vehicle("samsung",2000,30,"diesel")
+// //console.log(vehicle2);
+
+
+
+
+    
+
+
+
+    </script>
+</html>
