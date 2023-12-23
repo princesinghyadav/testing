@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en"> 
+
+<head>
+    <title>  </title>
+</head>
+<body>
+<h1>inheritence and prototype second assignment
+</h1>
+</body>
+<script>
+let fourvehicle = function(brand,model,type,autodrive,no_ofseats) {
+    this.brand=brand,
+    this.model=model,
+    this.type=type,
+    this.autodrive=autodrive,
+    this.no_ofseats=no_ofseats
+
+}
+let car1 = new fourvehicle("tata",2021,"diesel","no",5);
+//console.log(car1)
+
+  let truck= function(no_ofwheels,loadingcapacity,brand,model,type,autodrive,no_ofseats){
+     
+     fourvehicle.call(this,brand,model,type,autodrive,no_ofseats)
+    this.no_ofwheels=no_ofwheels,
+    this.loadingcapacity=loadingcapacity
+  }
+ 
+  let truck1= new truck(6,"60000kg","tesla",2023,"petrol","yes",7)
+  //console.log(truck1)
+ 
+  let suraj= {
+    brand :"ford",
+    model : 2000,
+    type : "diesel",
+    autodrive:"no",
+    no_ofseats: 6,
+    owner : "1st hand"
+  };
+  let sanju =Object.create(suraj)
+  sanju.model= 2005;
+  sanju.autodrive="yes";
+  sanju.no_ofseats= 9;
+console.log(suraj);
+console.log(sanju)
+console.log(sanju.model)
+console.log(sanju.brand)
+
+</script>
+
+</html>
