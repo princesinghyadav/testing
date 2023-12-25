@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <h1 id="time"> 05: 00</h1>
+    <button id="start">start</button>
+    <button id="stop"> pause</button>
+    <button id="reset">reset</button>
+    
+</body>
+<script>
+      let time =document.getElementById("time");
+  let start= document.getElementById("start");
+  let pause =document.getElementById("stop");
+  let reset= document.getElementById("reset");
+
+     
+  let second=59;
+  let minute=5;
+  let timer;
+ 
+  start.addEventListener("click", function (){
+  
+  timer =setInterval(timee,1000)
+ 
+}
+)
+reset.addEventListener("click",function (){
+clearInterval(timer);
+minute=0;
+aecond=0;
+document.getElementById("time").textContent=`${minute}: ${aecond}`
+})
+pause.addEventListener("click",function (){
+clearInterval(timer)
+})
+
+
+function timee (){
+minute = Math.floor((second / 60))
+
+let aecond =Math.floor(second % 60);
+second--;
+document.getElementById("time").textContent=`${minute}: ${aecond}`;
+
+}
+
+    
+</script>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="time">00:00:00 </h1>
+    <button id="start"> START</button>
+    <button id="pause"> PAUSE </button>
+    <button id="reset"> RESET</button>
+</body>
+<script>
+  let time =document.getElementById("time");
+  let start= document.getElementById("start");
+  let pause =document.getElementById("pause");
+  let reset= document.getElementById("reset");
+   
+  let second=0;
+  let minute=0;
+  let minisec=0;
+  let timer;
+ 
+
+  //let minisecond=0;
+start.addEventListener("click", function (){
+  
+    timer =setInterval(timee,1)
+   
+}
+)
+reset.addEventListener("click",function (){
+ clearInterval(timer);
+ minutes=0;
+ aecond=0;
+ minisecc=0;
+
+ document.getElementById("time").textContent=`${minute}: ${aecond}:${minisecc}`
+})
+pause.addEventListener("click",function (){
+ clearInterval(timer)
+  })
+
+  
+  function timee (){
+    minisecc= Math.floor(minisec%1000); 
+ minute = Math.floor(minisec / 60000)
+ 
+ let aecond =Math.floor(minisec / 1000);
+  // if(aecond>=60){
+   
+  //   aecond==0;
+  // }
+  minisec++;
+  document.getElementById("time").textContent=`${minute}: ${aecond}:${minisecc}`
+//console.log(`${minute}: ${aecond}`)
+  }
+
+    
+
+ 
+
+
+
+
+</script>
+</html>
