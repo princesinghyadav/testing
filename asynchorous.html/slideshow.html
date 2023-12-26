@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+#clas {
+    border: 2px solid red;
+    width: 80%;
+}
+#slide>img {
+    margin: auto;
+    width: 50%;
+    height: 300px;
+
+}
+</style>
+<body>
+    
+    <h1> slide show presentation </h1>
+    <div id="slide"> 
+         
+
+
+    </div>
+     <button id="next " onclick="nextt()" style="margin-left: 400px;"> <</button>
+   <button id="prev "style="margin-left430px;">></button>
+
+
+</body>
+<script>
+let arr =[
+    "https://th.bing.com/th?id=OIP.4siKIW3oZ4kEo0vkEVQ5hgHaLH&w=204&h=306&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2",
+    "https://th.bing.com/th?id=OIP.1YM53mG10H_U25iPjop83QHaEo&w=316&h=197&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2",
+    "https://th.bing.com/th?id=OIP.3MxqaJv2Z5QsG7wIXzizjAHaEo&w=316&h=197&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2",
+    "https://th.bing.com/th?id=OIP.Jek3CDQGyU5V2g3mChz8wQHaE-&w=305&h=204&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2",
+    "https://th.bing.com/th?id=OIP.hqgXmy-r13g-63xcvlz6AwHaE7&w=306&h=204&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2",
+    "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg",
+    "https://cdn.pixabay.com/photo/2014/02/27/16/10/flowers-276014_640.jpg",
+    "https://cdn.pixabay.com/photo/2015/12/01/20/28/road-1072823_640.jpg",
+    "https://cdn.pixabay.com/photo/2015/12/01/20/28/road-1072821_640.jpg",
+    "https://cdn.pixabay.com/photo/2015/06/19/21/24/avenue-815297_640.jpg",
+    "https://cdn.pixabay.com/photo/2017/02/08/17/24/fantasy-2049567_640.jpg",
+    "https://cdn.pixabay.com/photo/2013/10/02/23/03/mountains-190055_640.jpg",
+    "https://cdn.pixabay.com/photo/2017/02/01/22/02/mountain-landscape-2031539_640.jpg",
+    "https://cdn.pixabay.com/photo/2018/01/14/23/12/nature-3082832_640.jpg",
+    "https://cdn.pixabay.com/photo/2015/12/01/20/28/forest-1072828_640.jpg",
+    "https://cdn.pixabay.com/photo/2016/08/11/23/48/mountains-1587287_640.jpg"
+]
+let but= document.createElement("button")
+but.textContent="test   drive ";
+let div = document.createElement("div")
+div.setAttribute("id","clas")
+let prev=document.getElementById("prev ");
+let next =document.getElementById("next ")
+let count =0;
+
+let img = document.createElement("img")
+img.setAttribute("src",arr[count]);
+//next.addEventListener("click",nex);
+function nextt (){
+    count ++;
+    if(count >=arr.length){
+     count=0;
+    }
+    img.setAttribute("src",arr[count])
+    clearInterval(auto)
+}
+console.log(count)
+prev.addEventListener("click",function(){
+    count--;
+    if(count<0){
+        count=arr.length-1;
+    }
+    img.setAttribute("src",arr[count])
+    clearInterval(auto)
+})
+function nex (){
+    count ++;
+    if(count >=arr.length){
+     count=0;
+    }
+    img.setAttribute("src",arr[count])
+}
+//slide.append(img)
+let slide = document.getElementById("slide").append(but,img)
+let auto = setInterval(nex,5000)
+
+</script>
+</html>
