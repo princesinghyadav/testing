@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Access Movie Details </title>
+</head>
+<body>
+    <h1> Search Your Favourite Movie To Know The Details </h1>
+    <input id="mname" placeholder="enter your movie name">
+    <br>
+     
+   
+    <button id="clickme "  onclick="clicked()"> Details </button>
+    <div id="apend"> 
+
+    </div>
+
+</body>
+<script>
+ 
+let apend = document.getElementById("apend")
+let clickme =document.getElementById("clickme")
+
+let body=document.querySelector("body")
+function clicked  (){
+    let name = mname.value;
+console.log(name )
+    fetch(`https://omdbapi.com/?apikey=a736d0e&t=${name}`)
+    .then(res => res.json())
+     .then(data => {
+        console.log(data)
+        let title= document.createElement("h1");
+    title.innerText= `Title :-${data.Title}`;
+     let actor = document.createElement("h2");
+    actor.innerText= `Actors :-${data.Actors}`;
+    let img = document.createElement("img");
+    img.src= data.Poster, alt=" source not found";
+    let director = document.createElement("h3")
+    director.innerText=`Director :-${data.Director}`;
+    let plot= document.createElement("p");
+    plot.innerText=`plot of the story :-${data.Plot} `;
+   apend.append(actor,title,director,plot,img)
+     })
+     .catch(error => {
+        console.log("error occcured ",error)
+     })
+     
+    
+
+    }
+   
+
+
+</script>
+</html>

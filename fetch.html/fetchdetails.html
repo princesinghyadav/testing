@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> user details </title>
+    <style>
+        #users{
+            border: 2px solid red;
+            margin: auto;
+            width: 60%;
+            
+
+        }
+     #users>img{
+        width: 60%;
+        padding: 15%;
+
+     }
+
+
+    </style>
+</head>
+
+<body>
+    <h1 style="text-align: center;">Here Is Some Of The Famous Influencer And Their Detail.</h1>
+    <button id="label"> Labeled </button>
+     <div id="users">   
+
+     </div>
+
+</body>
+<script>
+   
+   let label= document.getElementById("label")
+   let users = document.getElementById("users")
+    label.addEventListener("click",function(){
+        fetch(`https://reqres.in/api/users`)
+        .then(res => 
+            res.json())
+        .then(data =>{
+            console.log(data.data);
+            refer(data);
+        })
+        .catch(error =>{
+            console.log("error occured ",error)
+        })
+    })
+    function refer (data){
+        for(let i=0;i<data.data.length;i++){
+            let name = document.createElement("h1")
+      name.innerText=data.data[i].first_name +"  "+ data.data[i].last_name;
+     let email= document.createElement("h2")
+     email.innerText= data.data[i].email;
+     let img=document.createElement("img")
+     img.src= data.data[i].avatar;
+     users.append(name,email,img);
+     
+        };
+     
+
+    }
+
+
+</script>
+</html>

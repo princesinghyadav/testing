@@ -22,6 +22,7 @@
   let minisec=0;
   let timer;
  
+  
 
   //let minisecond=0;
 start.addEventListener("click", function (){
@@ -39,7 +40,21 @@ reset.addEventListener("click",function (){
  document.getElementById("time").textContent=`${minute}: ${aecond}:${minisecc}`
 })
 pause.addEventListener("click",function (){
- clearInterval(timer)
+  
+  pause = (!pause)
+  if(pause2 == true){
+    pause2 = false;
+    start.addEventListener("click", function (){
+  
+  timer =setInterval(timee,1)
+ 
+  })
+  }
+  else{
+    clearInterval(timer)
+    pasue2 = true;
+  }
+ 
   })
 
   
