@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    hii
+    <input type="text" placeholder="search.." id="search"
+    oninput="debounce(makeapicall,1000)">
+    
+</body>
+<script>
+
+    function greet(){
+        let n="ram";
+        return function (){
+            console.log("sita ",n);
+            return function (){
+                console.log("lakshman");
+            }
+        }
+    }
+       //console.log(greet());
+//    let x=greet()()
+//    //x;
+//    console.log(x);
+//    for (i=1;i<=8;i++){
+//     //console.log(i);
+//     (function(index){
+//         setTimeout(function (){
+//         console.log(index)
+//     },index*1000)
+//     }) ;
+    
+//    }
+let search =document.getElementById("search");
+ function makeapicall(){
+    let value=document.getElementById("search").value
+    console.log("your",value,"  is being searched ",Date.now())
+ }
+ let timer;
+function debounce (callback,delay){
+if(timer){
+    clearTimeout(timer)
+}
+     timer=setTimeout(function(){
+        callback();
+    },delay);
+}
+
+
+
+
+
+
+</script>
+</html>

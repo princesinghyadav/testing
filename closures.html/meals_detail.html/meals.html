@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>search the meals to know the recpie</h2>
+    <input id="search" placeholder="search any meals" oninput="meals()">
+    <div id=" container">
+     
+
+    </div>
+</body>
+<script>
+    function meals(){
+console.log("Here is some of your searches:-")
+ fetchh();
+
+    }
+    function fetchh(){
+        let query =document.getElementById("search").value;
+
+        fetch(` www.themealdb.com/api/json/v1/1/search.php?s=Arrabiata`)
+        .then((res) => 
+            res.json())
+            .then(data =>{
+           console.log(data.meals)
+        })
+         
+
+    }
+</script>
+</html>
+ <!-- fetch(`https://reqres.in/api/users`)
+.then(res => 
+    res.json())
+.then(data =>{
+    console.log(data.data);
+    refer(data);
+})
+.catch(error =>{
+    console.log("error occured ",error)
+}) -->
