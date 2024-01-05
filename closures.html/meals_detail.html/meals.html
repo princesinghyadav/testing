@@ -14,32 +14,43 @@
     </div>
 </body>
 <script>
+    let timer=null ;
+
     function meals(){
 console.log("Here is some of your searches:-")
- fetchh();
+  clearInterval(timer);
+timer=setTimeout(function(){
+    fetchh(document.getElementById("search").value);
+},1500)
+ 
 
     }
-    function fetchh(){
-        let query =document.getElementById("search").value;
-
-        fetch(` www.themealdb.com/api/json/v1/1/search.php?s=Arrabiata`)
+    function fetchh(query){
+        fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${query}`)
         .then((res) => 
             res.json())
             .then(data =>{
-           console.log(data.meals)
+           console.log(data)
+           details(data.meals)
+        }).catch(err=>{
+            console.log(err)
         })
          
-
+    }
+     function details(receipe){
+        receipe.forEach(receipe => {
+            let h2=document.createElement("h2");
+       h2.innerText=`Name of the meal :-${receipe.strMeal}`;
+       let h3=document.createElement("h2");
+       h3.innerText=`Id of the meal :-${receipe.idMeal}`;
+       let img=document.createElement("img")
+       img.src=receipe.strMealThumb 
+       
+       let div= document.querySelector("body")
+       div.append(h3,h2,img)
+        });
+      
     }
 </script>
 </html>
- <!-- fetch(`https://reqres.in/api/users`)
-.then(res => 
-    res.json())
-.then(data =>{
-    console.log(data.data);
-    refer(data);
-})
-.catch(error =>{
-    console.log("error occured ",error)
-}) -->
+ 
