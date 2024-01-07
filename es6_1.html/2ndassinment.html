@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time management</title>
+</head>
+<body>
+    <h1 id="time">00</h1>
+    <button id="Start">Start </button>
+    <button onclick="inc()"> Increament</button>
+    <button onclick="dec()">Decrement</button>
+
+
+</body>
+<script>
+let time=document.getElementById("time")
+let start=document.getElementById("start");
+let count=0;
+let timer;
+Start.addEventListener("click",function  (){
+   Start.textContent="Stop"
+//    if(Start.textContent==Stop){
+//     Start.addEventListener("click",function(){
+//         count=0;
+//     })
+//    }
+ timer=setInterval(function(){
+    count++;
+    time.innerText=count;
+},1000)
+
+
+})
+function inc(){
+clearInterval(timer)
+count++;
+time.innerHTML=count;
+}
+function dec(){
+    clearInterval(timer);
+    count--;
+    time.textContent=count;
+}
+
+</script>
+</html>
