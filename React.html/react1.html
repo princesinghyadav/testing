@@ -5,15 +5,83 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>React Template</title>
   </head>
+  <style>
+    #spantag{
+      color: red;
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: 900;
+
+
+    }
+  </style>
   <body>
     <div id="root"></div>
+    <div id="roots"></div> 
+    <h1 id="exa">test like .inner text</h1> 
     <script src="https://www.unpkg.com/react@18.2.0/umd/react.production.min.js"></script>
     <script src="https://www.unpkg.com/react-dom@18.2.0/umd/react-dom.production.min.js"></script>
     <script>
-        let element= React.createElement("div"{
-            className= "wrapper",
+//       let exa=  document.getElementById("exa")
+//       let element = React.createElement("p",{
+//         className:"para",
+//         id: "paragraph",
+//         children:"this is the paragraph made by using react"
+//       });
+//       let element2=React.createElement("h1",{
+//       className:"h_one",
+//       children:["second method to write children:-",
+//      React.createElement("img",{
+//        sr
+//      })
+//     ]
+//       })
+//       let rootelement=  ReactDOM.createRoot(document.getElementById("root"))
+//      rootelement.render(element2);
+// //       <div id="divv">   
+// //          <p id="paragraph"> inside div</p>                          
+// //     <p id="paragraph2"> inside div 2</p> 
+// //      <div> <p>this is <span>sparta</span></p>
+// //       </div>
+// //  </div>
+// let div= React.createElement("div",{
+//   className:"divv",
+//    children:[
+//     React.createElement("p",{
+//       id:"paragraph",
+//       children:"inside div",
+//     }),
+//     React.createElement("p",{
+//       id:"paragraph2",
+//       children:"inside div 2"
+//     }),
+//     React.createElement("div",{
+//       id:"unknown",
+//       children:[
+//         React.createElement("p",{
+//           children:["this is   ",
+//             React.createElement("span",{
+//               children:"sparta",
+//               id:"spantag"
+//             })
+//           ]
             
-        })
+          
+//         })
+//       ]
+//     })
+//   ]
+// })
+let div= React.createElement("div",{
+        className: "parent",
+        id:"paarent",
+        children:[
+            React.createElement("h1",{
+                children:"ram",
+            })
+        ]
+          })
+      let rootsElement =ReactDOM.createRoot(document.getElementById("roots"))
+      rootsElement.render(div)
     </script>
   </body>
 </html>
