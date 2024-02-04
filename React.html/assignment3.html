@@ -7,21 +7,47 @@
 </head>
 <style>
     .parent{
-        border: 5px solid red;
+        border: 2px solid black;
+        display: flex;
+        justify-content: space-around;
+        width: 60%;
+        margin: auto;
+        background-color: grey;
+        height: 150px;
     }
+    .child{
+        border: 2px solid black;
+        width: 15%;
+        margin: auto;
+        
+            }
+            #one{
+                background-color: red;
+            }
+            #two{
+                background-color: yellow;
+            }
+            #three{
+                background-color: green;
+            }
+            #foue{
+                background-color: brown;
+            }
+          
 </style>
 <body>
     <h1>assignment 3 </h1>
-    <div id="flex"> </div>
+    <div id="flex"> iuyiu</div>
     <script src="https://www.unpkg.com/react@18.2.0/umd/react.production.min.js"></script>
     <script src="https://www.unpkg.com/react-dom@18.2.0/umd/react-dom.production.min.js"></script>
     <script>
     let div= React.createElement("div",{
         className: "parent",
         id:"paarent",
-        children:[ 
+        children:[ "parent",
        React.createElement("div",{
         className:"child",
+        id:"one",
         children:[
             React.createElement("h1",{
                 children:1,
@@ -30,34 +56,38 @@
        }),
        React.createElement("div",{
         className:"child",
+        id:"two",
         children:[
             React.createElement("h1",{
-                children:1,
+                children:2,
             })
         ]
        }),
        React.createElement("div",{
         className:"child",
+        id:"three",
         children:[
             React.createElement("h1",{
-                children:1,
+                children:3,
             })
         ]
        }),
        React.createElement("div",{
         className:"child",
+        id:"foue",
         children:[
             React.createElement("h1",{
-                children:1,
+                children:4,
             })
         ]
        }),
+    
     ]
-
+    
     })
-    let flec= ReactDom.createRoot(document.getElementsById("flex"))
-    flec.render(div)
-
+    let rootsElement =ReactDOM.createRoot(document.getElementById("flex"))
+      rootsElement.render(div)
+   
     </script>
 </body>
 </html>

@@ -1,3 +1,5 @@
+<!-- revision of class exercise discuss in live class  -->
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -16,17 +18,18 @@
   </style>
   <body>
     <div id="root"></div>
-    <div id="roots"></div> 
+    <div id="roots"> hii</div> 
     <h1 id="exa">test like .inner text</h1> 
     <script src="https://www.unpkg.com/react@18.2.0/umd/react.production.min.js"></script>
     <script src="https://www.unpkg.com/react-dom@18.2.0/umd/react-dom.production.min.js"></script>
     <script>
-//       let exa=  document.getElementById("exa")
-//       let element = React.createElement("p",{
-//         className:"para",
-//         id: "paragraph",
-//         children:"this is the paragraph made by using react"
-//       });
+      let exa=  document.getElementById("exa")
+      let element = React.createElement("p",{
+        className:"para",
+        id: "paragraph",
+        children:"this is the paragraph made by using react"
+      });
+      
 //       let element2=React.createElement("h1",{
 //       className:"h_one",
 //       children:["second method to write children:-",
@@ -37,50 +40,57 @@
 //       })
 //       let rootelement=  ReactDOM.createRoot(document.getElementById("root"))
 //      rootelement.render(element2);
+
+
+
+//  you have to create  this html code by using react 1 
+
 // //       <div id="divv">   
 // //          <p id="paragraph"> inside div</p>                          
 // //     <p id="paragraph2"> inside div 2</p> 
 // //      <div> <p>this is <span>sparta</span></p>
 // //       </div>
 // //  </div>
-// let div= React.createElement("div",{
-//   className:"divv",
-//    children:[
-//     React.createElement("p",{
-//       id:"paragraph",
-//       children:"inside div",
-//     }),
-//     React.createElement("p",{
-//       id:"paragraph2",
-//       children:"inside div 2"
-//     }),
-//     React.createElement("div",{
-//       id:"unknown",
-//       children:[
-//         React.createElement("p",{
-//           children:["this is   ",
-//             React.createElement("span",{
-//               children:"sparta",
-//               id:"spantag"
-//             })
-//           ]
+
+let div= React.createElement("div",{
+  className:"divv",
+   children:[
+    React.createElement("p",{
+      id:"paragraph",
+      children:"inside div",
+    }),
+    React.createElement("p",{
+      id:"paragraph2",
+      children:"inside div 2"
+    }),
+    React.createElement("div",{
+      id:"unknown",
+      children:[
+        React.createElement("p",{
+          children:["this is   ",
+            React.createElement("span",{
+              children:"sparta",
+              id:"spantag"
+            })
+          ]
             
           
-//         })
-//       ]
-//     })
-//   ]
-// })
-let div= React.createElement("div",{
+        })
+      ]
+    })
+  ]
+})
+let divv= React.createElement("div",{
         className: "parent",
         id:"paarent",
         children:[
             React.createElement("h1",{
-                children:"ram",
+                children:"raam",
             })
         ]
+
           })
-      let rootsElement =ReactDOM.createRoot(document.getElementById("roots"))
+          let rootsElement =ReactDOM.createRoot(document.getElementById("roots"))
       rootsElement.render(div)
     </script>
   </body>
@@ -88,7 +98,7 @@ let div= React.createElement("div",{
 <!-- <div className="wrapper">
     <p id="quote">Carpe Diem</p>
     <p>Seize the day</p>
-    <div>
+    <div> 
       <p>
         This is <span>Sparta</span>
       </p>
